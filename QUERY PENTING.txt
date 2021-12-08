@@ -1,0 +1,14 @@
+  // Hitung jumlah orang yang difollow
+  Match (n)-[r]->(m:PERSON) return n.name, count(n)
+
+  // jumlah [minat] yang diikuti oleh 1 [person]
+  match (n)-[r]->(m:MINAT) return n, count(m) 
+
+  // seluruh [minat] dengan berapa banyak [person] yang tertarik
+  match (n:PERSON)-[r]->(m:MINAT) return m.interest, count(n)
+
+  // SIAPA SAJA Yg difollow
+      Match (n)-[r]->(m:PERSON) return n.name, collect(m.name)
+
+ // GATAU
+   Match (n)-[r]->(m:PERSON) with collect(m.name) as col, WITH REDUCE(s = HEAD(col), n IN TAIL(col) | s + ', ' + n) AS result return y, result
