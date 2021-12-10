@@ -20,6 +20,7 @@ if (defined("ALLOWED") === false) {
         // var_dump($results);die;
         $no = 0;
         $results = $client->run('Match (n)-[r]->(m:PERSON) return n.name, count(n) as n');
+        
         foreach ($results as $result) { ?>
         <?php
 

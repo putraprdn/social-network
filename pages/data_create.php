@@ -22,9 +22,7 @@ if (defined("ALLOWED") === false) {
                 <td>:</td>
                 <td>
                     <select style="width: 18%;" name="entitas" class="form-control" name="role">
-                        <Option value="" disabled="" selected="">Select label</Option>
-                        <Option value="PERSON">PERSON</Option>
-                        <Option value="MINAT">MINAT</Option>
+                        <Option value="PERSON" >PERSON</Option>
                     </select>
                 </td>
             </tr>

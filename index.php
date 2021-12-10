@@ -58,12 +58,18 @@ require_once "koneksi.php";
                 <a class="dropdown-item" href="?page=menu_7">7. Menampilkan akun dengan minat memasak</a>
                 <a class="dropdown-item" href="?page=menu_8">8. Menampilkan akun dengan jenis kelamin perempuan</a>
                 <a class="dropdown-item" href="?page=menu_9">9. Menampilkan nama followers</a>
+                <a class="dropdown-item" href="?page=menu_10">10. Menampilkan akun dengan jenis kelamin laki-laki</a>
               </div>
             </div>
 
             <?php
             if (strpos($_SERVER['REQUEST_URI'], 'page') == true) {
-              echo "<a href='?page=data_create' class='btn btn-primary ml-2'>Tambah Data</a>";
+              if ($_GET["page"] == "data_delete"  or $_GET["page"] == "data_create") {
+                echo "<a href='?page=menu_1' class='btn btn-primary ml-2'>Kembali</a>";
+              } else {
+                echo "<a href='?page=data_create' class='btn btn-primary ml-2'>Tambah Data</a>";
+                echo "<a href='?page=data_delete' class='btn btn-danger ml-2'>Hapus Data</a>";
+              }
             }
             ?>
             <!-- <h1 class="m-0">Dashboard</h1> -->

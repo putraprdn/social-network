@@ -22,6 +22,7 @@ else if ($data['relasi'] == 'is_like')
 
 
 $results = $client->run("Create (:".$data['entitas']."{name:'".$data['name1']."'})-[:".$data['relasi']."]->(:".$entitas2."{name:'".$data['name2']."'})");
+redirect('?page=menu_1');
 // print_r($var);
 // create (a { name: "foo" })-[:HELLO]->(b {name : "bar"}),
 //        (c {name: "Baz"})-[:GOODBYE]->(d {name:"Quux"});
