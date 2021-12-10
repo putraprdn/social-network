@@ -43,19 +43,29 @@ require_once "koneksi.php";
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6" style="margin-left: 14rem;">
+          <div class="row d-flex col-sm-6" style="margin-left: 14rem;">
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tes
+                Query
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="?page=menu_1">1. Tampilkan data username dan jenis kelamin</a>
-                <a class="dropdown-item" href="?page=menu_2">2. Menampilkan berapa banyak akun yang difollow oleh tiap orang</a>
-                <a class="dropdown-item" href="?page=menu_3">3. Menampilkan nama akun dan jumlah minat yang diikuti</a>
+                <a class="dropdown-item" href="?page=menu_1">1. Menampilkan data username dan jenis kelamin</a>
+                <a class="dropdown-item" href="?page=menu_2">2. Menampilkan jumlah akun yang difollow</a>
+                <a class="dropdown-item" href="?page=menu_3">3. Menampilkan jumlah minat yang disukai</a>
                 <a class="dropdown-item" href="?page=menu_4">4. Menampilkan nama minat dan jumlah peminatnya</a>
                 <a class="dropdown-item" href="?page=menu_5">5. Menampilkan following dari masing-masing akun</a>
+                <a class="dropdown-item" href="?page=menu_6">6. Menampilkan minat yang disukai oleh masing-masing akun</a>
+                <a class="dropdown-item" href="?page=menu_7">7. Menampilkan akun dengan minat memasak</a>
+                <a class="dropdown-item" href="?page=menu_8">8. Menampilkan akun dengan jenis kelamin perempuan</a>
+                <a class="dropdown-item" href="?page=menu_9">9. Menampilkan nama followers</a>
               </div>
             </div>
+
+            <?php
+            if (strpos($_SERVER['REQUEST_URI'], 'page') == true) {
+              echo "<a href='?page=data_create' class='btn btn-primary ml-2'>Tambah Data</a>";
+            }
+            ?>
             <!-- <h1 class="m-0">Dashboard</h1> -->
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -110,7 +120,7 @@ require_once "koneksi.php";
   <!-- Main Footer -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2021 Kelompok 4</strong>
-    
+
     <div class="float-right d-none d-sm-inline-block">
     </div>
   </footer>
