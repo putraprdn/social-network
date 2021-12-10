@@ -19,7 +19,7 @@ if (defined("ALLOWED") === false) {
 
         // var_dump($results);die;
         $no = 0;
-        $results = $client->run('match (n:PERSON)-[r]->(m:MINAT) return m.name, count(n) as c');
+        $results = $client->run('match (n:PERSON)-[r]->(m:MINAT) return m.name, count(n) as c order by m.name');
         foreach ($results as $result) { ?>
         <?php
 
